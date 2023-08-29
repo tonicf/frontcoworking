@@ -3,14 +3,67 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ClassroomDetailsComponent } from './classroom-details/classroom-details.component';
+import { ClassroomReservationComponent } from './classroom-reservation/classroom-reservation.component';
+import { ClassroomsListComponent } from './pages/classrooms-list/classrooms-list.component';
+import { LoginDashboardComponent } from './login-dashboard/login-dashboard.component';
+import { LoginFormComponent } from './pages/login-form/login-form.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { PricesComponent } from './pages/prices/prices.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { UpdateUserComponent } from './pages/update-user/update-user.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
+import { MainLayoutComponent } from './main-layout/main-layout.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
+
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClassroomDetailsComponent,
+    ClassroomReservationComponent,
+    ClassroomsListComponent,
+    LoginDashboardComponent,
+    LoginFormComponent,
+    
+    UserProfileComponent,
+    PricesComponent,
+    ContactComponent,
+    UpdateUserComponent,
+    InicioComponent,
+    MainLayoutComponent
+    
+    
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
