@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserService } from 'src/app/user.service';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -6,13 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent {
-  email: string;
-  password: string;
+  email = new FormControl("", [Validators.required, Validators.email]);
+  password = new FormControl("", [Validators.required, Validators.minLength(8)]);
 
-    constructor() {
-    this.email = 'email';
-    this.password = 'password';
+  constructor(public userService: UserService) {}
+
+  login() {    
+    const user = { email: this.email, password: this.password };
+    this.userService.login(user).subscribe((data) => {
+      console.log(data);
+    });
   }
-
-  
 }
+
+
