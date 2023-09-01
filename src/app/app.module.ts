@@ -3,17 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClassroomDetailsComponent } from './classroom-details/classroom-details.component';
-import { ClassroomReservationComponent } from './classroom-reservation/classroom-reservation.component';
-import { ClassroomsListComponent } from './pages/classrooms-list/classrooms-list.component';
-import { LoginDashboardComponent } from './login-dashboard/login-dashboard.component';
+import { ClassroomDetailsComponent } from './pages/classroom/classroom-details/classroom-details.component';
+import { ClassroomReservationComponent } from './pages/classroom/classroom-reservation/classroom-reservation.component';
+import { ClassroomsListComponent } from './pages/classroom/classrooms-list/classrooms-list.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { PricesComponent } from './pages/prices/prices.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { UpdateUserComponent } from './pages/update-user/update-user.component';
-import { InicioComponent } from './pages/inicio/inicio.component';
+import { InicioComponent } from './pages/home/inicio.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
+import { SignupFormComponent } from './pages/signup-form/signup-form.component';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
@@ -26,7 +25,8 @@ import { MatInputModule } from '@angular/material/input';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
-
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './user.service';
 
 
 
@@ -37,16 +37,12 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     ClassroomDetailsComponent,
     ClassroomReservationComponent,
     ClassroomsListComponent,
-    LoginDashboardComponent,
     LoginFormComponent,
-    
     UserProfileComponent,
-    PricesComponent,
     ContactComponent,
-    UpdateUserComponent,
     InicioComponent,
-    MainLayoutComponent
-    
+    MainLayoutComponent,
+    SignupFormComponent
     
 
   ],
@@ -57,6 +53,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
@@ -65,7 +62,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
       useFactory: adapterFactory,
     }),
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

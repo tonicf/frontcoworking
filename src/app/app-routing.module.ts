@@ -1,27 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClassroomDetailsComponent } from './classroom-details/classroom-details.component';
-import { PricesComponent } from './pages/prices/prices.component';
+import { ClassroomDetailsComponent } from './pages/classroom/classroom-details/classroom-details.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { UpdateUserComponent } from './pages/update-user/update-user.component';
-import { InicioComponent } from './pages/inicio/inicio.component';
-import { MainLayoutComponent } from './main-layout/main-layout.component';
+import { InicioComponent } from './pages/home/inicio.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { SignupFormComponent } from './pages/signup-form/signup-form.component';
 
 const routes: Routes = [
-  {path: '',
-  component: MainLayoutComponent},
-  
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' }, // Ruta base redirige a inicio
   { path: 'inicio', component: InicioComponent },
   { path: 'espacios', component: ClassroomDetailsComponent },
-  { path: 'precios', component: PricesComponent },
   { path: 'acceso-miembros', component: LoginFormComponent },
   { path: 'registro', component: SignupFormComponent },
-  { path: 'contacto', component: ContactComponent },
-  { path: 'actualizar-usuario', component: UpdateUserComponent },
-  
 
+  { path: 'contacto', component: ContactComponent },
+  { path: 'usuario/:id', component: UserProfileComponent}
+  
 ];
 
 @NgModule({
