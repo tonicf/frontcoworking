@@ -1,3 +1,28 @@
+/* Reset de estilos y ajustes generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Estilos para el encabezado */
+header {
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Estilos para el contenido principal */
+main {
+  padding: 20px;
+}
+
 /* Estilos para el formulario de inicio de sesión */
 .login-container {
   background-color: white;
@@ -25,12 +50,14 @@
   color: black;
 }
 
+/* Aplicar margen izquierdo y derecho de 0 a los inputs dentro de .form-group */
 .form-group input[type="email"],
 .form-group input[type="password"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin: 0; /* Establecer margen izquierdo y derecho en 0 */
 }
 
 .form-group small {
@@ -53,10 +80,22 @@
 }
 
 /* Estilos para los mensajes de error */
-
-
-
 .form-group .is-invalid + div span {
-  color: #dc3545; /* Cambiar el color del texto a rojo en caso de error */
-  font-size: 12px; /* Mantener el tamaño de fuente igual que el resto */
+  color: #dc3545;
+  font-size: 12px;
+}
+
+/* Estilos para hacer el sitio responsive */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 10px 0;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .login-container {
+    padding: 10px;
+  }
 }

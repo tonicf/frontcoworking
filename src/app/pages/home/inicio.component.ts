@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-inicio',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent {
+constructor (private router: Router){
 
+}
+redirigirContacto(){
+  this.router.navigate(['contacto'])
+}
 }

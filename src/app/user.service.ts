@@ -10,9 +10,9 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   login(user: any): Observable<any> {
-    return this.http.post("ruta postman",user);
+    return this.http.post("funcion backend",user);//falta añadir función del backend
   }
-  register(user: any): Observable<any> {
-    return this.http.post("ruta postman",user);
+  register(user: any, url:string): Observable<any> {
+    return this.http.post("http://localhost:8080/api/v1/users",user);
   }
 }

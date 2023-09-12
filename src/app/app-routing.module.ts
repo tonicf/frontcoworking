@@ -4,7 +4,7 @@ import { ClassroomDetailsComponent } from './pages/classroom/classroom-details/c
 import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { InicioComponent } from './pages/home/inicio.component';
-import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+//import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { SignupFormComponent } from './pages/signup-form/signup-form.component';
 
 const routes: Routes = [
@@ -13,9 +13,8 @@ const routes: Routes = [
   { path: 'espacios', component: ClassroomDetailsComponent },
   { path: 'acceso-miembros', component: LoginFormComponent },
   { path: 'registro', component: SignupFormComponent },
-
   { path: 'contacto', component: ContactComponent },
-  { path: 'usuario/:id', component: UserProfileComponent}
+ // { path: 'usuario/:id', component: UserProfileComponent}
   
 ];
 

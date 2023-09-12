@@ -23,8 +23,13 @@ constructor(public userService: UserService){}
 
 
 register(){
-  const user = { name: this.name, lastname: this.lastname, dni: this.dni, email: this.email, numberPhone: this.numberPhone, passwor: this.numberPhone};
-  this.userService.register(user).subscribe((data) => {
+  const user = { name: this.name, lastname: this.lastname,
+     dni: this.dni, email: this.email, 
+     numberPhone: this.numberPhone, password: this.numberPhone};
+     
+     const urlDePostman = 'http://localhost:8080/api/v1/users';
+
+  this.userService.register(user, urlDePostman).subscribe((data) => {
   console.log(data);
 }  )
 
