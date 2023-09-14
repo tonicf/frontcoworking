@@ -23,21 +23,21 @@
     </div>
 
     <div class="form-group">
-      <label for="lastname">Apellido:</label>
+      <label for="surname">Apellido:</label>
       <input
         type="text"
-        [formControl]="lastname"
-        name="lastname"
+        [formControl]="surname"
+        name="surname"
         placeholder="Introduzca su apellido"
         required
         maxlength="10"
-        [ngClass]="{'is-valid': !lastname.invalid, 'is-invalid': lastname.invalid}"
+        [ngClass]="{'is-valid': !surname.invalid, 'is-invalid': surname.invalid}"
       />
-      <div [hidden]="lastname.valid || lastname.pristine">
-        <span *ngIf="lastname.errors?.['maxlength']">
+      <div [hidden]="surname.valid || surname.pristine">
+        <span *ngIf="surname.errors?.['maxlength']">
           Introduzca un apellido con 10 caracteres máximo
         </span>
-        <span *ngIf="lastname.errors?.['required']">
+        <span *ngIf="surname.errors?.['required']">
           Introduzca un apellido válido por favor
         </span>
       </div>
@@ -131,7 +131,7 @@
     </div>
 
     <div class="form-group">
-      <button type="submit" [hidden]="name.invalid || lastname.invalid || dni.invalid || email.invalid || numberPhone.invalid || password.invalid" (click)="register()">Registrarse</button>
+      <button type="submit" [hidden]="name.invalid || surname.invalid || dni.invalid || email.invalid || numberPhone.invalid || password.invalid" (click)="register()">Registrarse</button>
     </div>
   </form>
 </div>

@@ -8,10 +8,14 @@ import { ContactComponent } from '../contact/contact.component';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent {
-constructor (private router: Router){
+   
+  constructor (private router: Router){
+  }
+  ngOnInit(){}
 
-}
-redirigirContacto(){
-  this.router.navigate(['contacto'])
+  redirigirContacto(){
+
+  this.router.navigate(['contacto']);
+  
 }
 }
