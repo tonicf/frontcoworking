@@ -7,7 +7,7 @@ import { ClassroomDetailsComponent } from './pages/classroom/classroom-details/c
 import { ClassroomReservationComponent } from './pages/classroom/classroom-reservation/classroom-reservation.component';
 import { ClassroomsListComponent } from './pages/classroom/classrooms-list/classrooms-list.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
-//import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { InicioComponent } from './pages/home/inicio.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
@@ -49,9 +49,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MainLayoutComponent,
     SignupFormComponent,
     CalendarComponent,
-    //    UserProfileComponent,
+    UserProfileComponent,
     
-
   ],
   imports: [
     BrowserModule,
