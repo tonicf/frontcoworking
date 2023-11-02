@@ -2,21 +2,24 @@
   <h2>Login</h2>
   <form class="custom-form" method="post">
     <div class="form-group">
-      <label for="email">Email:</label>
+      <label for="dni">DNI:</label>
       <input
-        type="email"
-        [formControl]="email"
-        name="email"
-        placeholder="juan@gmail.com"
+        type="text"
+        [formControl]="dni"
+        name="dni"
+        placeholder="Ejemplo: 12345678A"
         required
-        [ngClass]="{'is-valid': !email.invalid, 'is-invalid': email.invalid}"
+        pattern="[0-9]{8}[A-Za-z]{1}"
+        maxlength="9"
+        [ngClass]="{'is-valid': !dni.invalid, 'is-invalid': dni.invalid}"
       />
-      <div [hidden]="email.valid || email.pristine">
-        <span *ngIf="email.errors?.['required']">
-          Introduzca un correo electrónico válido por favor
+      <small>Formato: 8 dígitos seguidos de 1 letra</small>
+      <div [hidden]="dni.valid || dni.pristine">
+        <span *ngIf="dni.errors?.['required']">
+          Introduzca un DNI válido por favor
         </span>
-        <span *ngIf="email.errors?.['email']">
-          Introduzca un correo electrónico con el formato correcto
+        <span *ngIf="dni.errors?.['pattern']">
+          Introduzca un DNI con el formato correcto
         </span>
       </div>
     </div>
@@ -42,9 +45,11 @@
       <small>Mínimo 8 caracteres</small>
     </div>
     <div class="form-group">
-      <button type="submit" [hidden]="password.invalid || email.invalid" (click)="login()">Log in</button>
+      <button type="submit" [hidden]="password.invalid || dni.invalid" (click)="login()">Log in</button>
     </div>
   </form>
+  <div class="error-message" *ngIf="loginError">{{ loginError }}</div>
+
 </div>
 
 

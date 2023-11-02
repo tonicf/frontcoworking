@@ -1,19 +1,7 @@
 
 
 
-    <!--mostramos salas
-        <div *ngFor="let salas of classrooms">
-            <span>{{salas.name}}</span>
-            <div *ngFor="let desc of salas.type.desription">
-                <li>
-                    <ul>desc</ul>
-                </li>
-            </div>
-            <span>{{salas.type.imageData}}</span>
-        <hr>
-        </div>
-
-
+    <!--
 
 </div>
 <div>
@@ -46,6 +34,7 @@
                         <li>Aire acondicionado</li>
                         <li>Luz natural</li>
                         <li>Mesas y sillas adaptables a necesidades del evento</li>
+                        <div class = "precio"> Precio por día: 20€ + IVA</div>
                     </ul>
                 </div>
             </div>
@@ -71,6 +60,8 @@
                         <li>Aire acondicionado</li>
                         <li>Luz natural</li>
                         <li>Mesas y sillas adaptables a necesidades del evento</li>
+                        <div class = "precio"> Precio por día: 20€ + IVA</div>
+
                     </ul>
                 </div>
             </div>
@@ -98,6 +89,8 @@
                         <li>Zona de fácil aparcamiento</li>
                         <li>Impresión (coste por copias)</li>
                         <li>Limpieza</li>
+                        <div class = "precio"> Precio por día: 15€ + IVA</div>
+
                     </ul>
                 </div>
             </div>
@@ -125,12 +118,62 @@
                         <li>Zona de fácil aparcamiento</li>
                         <li>Impresión (coste por copias)</li>
                         <li>Limpieza</li>
+                        <div class = "precio"> Precio por mes: 300€ + IVA</div>
+
+
                     </ul>
+                    
                 </div>
             </div>
         </div>
     </section>
+    <section class="containerClassroom">
+        <div class = "calendar">
+            <div class="titulo-espacio">Realiza tu reserva</div>
+            <div *ngIf="authorized">
+            <br>
+<br>
+<select [formControl]="espacio" id="espacio">
+    <option value="2">Sala de Reuniones</option>
+    <option value="3">Sala de Presentaciones</option>
+    <option value="4">Espacio Coworking 1</option>
+    <option value="5">Espacio Coworking 2</option>
+    <option value="6">Espacio Coworking 3</option>
+    <option value="7">Espacio Coworking 4</option>
+    <option value="8">Espacio Coworking 5</option>
+    <option value="9">Espacio Coworking 6</option>
+  </select>
+  <br>
 
+  <br>
+        
+<div class="calendar-container">
+    <mat-form-field>
+      <mat-label>Introduce una fecha</mat-label> 
+      
+      <input matInput [matDatepickerFilter] ="filterAvailabilityDay" [matDatepicker]="picker" [formControl] = "date">
+      <mat-hint></mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    </div>
+        <br>
+        <button type = "submit" (click)= "booking()" >Reservar</button>
+
+        <br>
+        <br>
+       
+        </div>
+    </div>
+    <div class="calendar" *ngIf="!authorized">
+    <p>*Para poder acceder a las reservas online debes estar autorizado previamente por el Ayuntamiento</p>
+</div>   
+<div class="calendar">
+
+<p>*Los depachos de alquiler de larga duración se gestionarán directamente con el Ayuntamiento</p>
+</div>   
+
+</section>
     
 
 

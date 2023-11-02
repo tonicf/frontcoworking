@@ -10,7 +10,6 @@ body {
   background-color: #f2f2f2;
 }
 
-/* Estilos para el encabezado */
 header {
   background-color: black;
   color: white;
@@ -18,19 +17,17 @@ header {
   text-align: center;
 }
 
-/* Estilos para el contenido principal */
 main {
   padding: 20px;
 }
 
-/* Estilos para las secciones */
 section {
   background-color: white;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centra el texto dentro de las secciones */
+  text-align: center; 
 }
 
 h2 {
@@ -42,7 +39,6 @@ p {
   color: #666;
 }
 
-/* Estilos para el pie de página */
 footer {
   background-color: black;
   color: white;
@@ -50,7 +46,6 @@ footer {
   padding: 10px 0;
 }
 
-/* Estilos para hacer el sitio responsive */
 @media screen and (max-width: 768px) {
   header {
       padding: 10px 0;

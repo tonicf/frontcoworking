@@ -134,6 +134,8 @@
       <button type="submit" [hidden]="name.invalid || surname.invalid || dni.invalid || email.invalid || numberPhone.invalid || password.invalid" (click)="register()">Registrarse</button>
     </div>
   </form>
+  <div class="error-message" *ngIf="registerError">{{ registerError }}</div>
+
 </div>
 
   

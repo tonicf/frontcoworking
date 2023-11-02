@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'acceso-miembros', component: LoginFormComponent },
   { path: 'registro', component: SignupFormComponent },
   { path: 'contacto', component: ContactComponent },
-  { path: 'usuario/:id', component: UserProfileComponent},
+  { path: 'usuario', component: UserProfileComponent},
   
 ];
 

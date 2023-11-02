@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClassroomDetailsComponent } from './pages/classroom/classroom-details/classroom-details.component';
-import { ClassroomReservationComponent } from './pages/classroom/classroom-reservation/classroom-reservation.component';
-import { ClassroomsListComponent } from './pages/classroom/classrooms-list/classrooms-list.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -30,6 +28,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
+import { ClassroomService } from './classroom.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
@@ -41,8 +40,6 @@ import { MatNativeDateModule } from '@angular/material/core';
   declarations: [
     AppComponent,
     ClassroomDetailsComponent,
-    ClassroomReservationComponent,
-    ClassroomsListComponent,
     LoginFormComponent,
     ContactComponent,
     InicioComponent,
@@ -71,7 +68,7 @@ import { MatNativeDateModule } from '@angular/material/core';
       useFactory: adapterFactory,
     }),
   ],
-  providers: [UserService, CalendarComponent],
+  providers: [UserService, CalendarComponent, ClassroomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

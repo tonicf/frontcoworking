@@ -1,4 +1,3 @@
-/* Reset de estilos y ajustes generales */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +9,6 @@ body {
   background-color: #f2f2f2;
 }
 
-/* Estilos para el encabezado */
 header {
   background-color: black;
   color: white;
@@ -18,12 +16,10 @@ header {
   text-align: center;
 }
 
-/* Estilos para el contenido principal */
 main {
   padding: 20px;
 }
 
-/* Estilos para el formulario de registro con Angular */
 .register-container {
   background-color: white;
   margin: 20px auto;
@@ -50,7 +46,7 @@ main {
   color: black;
 }
 
-/* Aplicar margen izquierdo y derecho de 0 a los inputs dentro de .form-group */
+
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"] {
@@ -58,7 +54,7 @@ main {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin: 0; /* Establecer margen izquierdo y derecho en 0 */
+  margin: 0; 
 }
 
 .form-group small {
@@ -80,13 +76,13 @@ main {
   background-color: #585656;
 }
 
-/* Estilos para los mensajes de error */
+
 .form-group .is-invalid + div span {
   color: #dc3545;
   font-size: 12px;
 }
 
-/* Estilos para hacer el sitio responsive */
+
 @media screen and (max-width: 768px) {
   header {
     padding: 10px 0;

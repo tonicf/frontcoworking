@@ -10,6 +10,18 @@
     .paragraph-container {
         padding: 10px;
     }
+    .contenido-espacio .imagen-caracteristicas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    .imagen-caracteristicas .imagen-espacio {
+max-width: 80%;
+margin: 0;
+    }
+    
 }
 
 
@@ -41,17 +53,27 @@
 }
 
 .imagen-espacio {
-    max-width: 600px; /* Puedes ajustar el ancho de la imagen según tus preferencias */
+    max-width: 600px; 
     height: auto;
     margin-right: 20px;
 }
 
 .caracteristicas {
     text-align: left;
-    flex: 1; /* Para que ocupe el espacio restante en la columna */
+    flex: 1; 
 }
 
 .descripcion-espacio {
     margin-top: 10px;
     text-align: center;
+}
+
+.calendar {
+    text-align: center;
+}
+
+.precio {
+    text-align: center;
+    font-size: 20px;
+    color: aqua;
 }

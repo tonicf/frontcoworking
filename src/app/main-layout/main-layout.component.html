@@ -1,13 +1,21 @@
-<div>
+<div class="principal">
     <header class="header">
       <div class="titulo">Coworking Carmona</div>
       <nav class="menu">
-        <ul>
+        <ul *ngIf="!isAutenticated">
           <li><a routerLink="/">INICIO</a></li>
           <li><a routerLink="/espacios">ESPACIOS</a></li>
           <li><a routerLink="/acceso-miembros">ACCESO MIEMBROS</a></li>
           <li><a routerLink="/registro">REGISTRO</a></li>
           <li><a routerLink="/contacto">CONTACTO</a></li>
+        </ul>
+        <ul *ngIf="isAutenticated">
+          <li><a routerLink="/">INICIO</a></li>
+          <li><a routerLink="/espacios">ESPACIOS</a></li>
+          <li><a routerLink="/usuario">PERFIL</a></li>
+          <li><a routerLink="/contacto">CONTACTO</a></li>
+          <li><span class="close" (click)="userService.logout()">CERRAR SESIÓN</span></li>
+
         </ul>
       </nav>
     </header>
