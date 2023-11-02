@@ -1,13 +1,21 @@
-<div>
+<div class="principal">
     <header class="header">
-      <div class="logo">Logo</div>
+      <div class="titulo">Coworking Carmona</div>
       <nav class="menu">
-        <ul>
+        <ul *ngIf="!isAutenticated">
           <li><a routerLink="/">INICIO</a></li>
           <li><a routerLink="/espacios">ESPACIOS</a></li>
           <li><a routerLink="/acceso-miembros">ACCESO MIEMBROS</a></li>
           <li><a routerLink="/registro">REGISTRO</a></li>
           <li><a routerLink="/contacto">CONTACTO</a></li>
+        </ul>
+        <ul *ngIf="isAutenticated">
+          <li><a routerLink="/">INICIO</a></li>
+          <li><a routerLink="/espacios">ESPACIOS</a></li>
+          <li><a routerLink="/usuario">PERFIL</a></li>
+          <li><a routerLink="/contacto">CONTACTO</a></li>
+          <li><span class="close" (click)="userService.logout()">CERRAR SESIÓN</span></li>
+
         </ul>
       </nav>
     </header>
@@ -29,8 +37,7 @@
         </div>
         <div class="footer-section">
           <div class="footer-center">
-            <img src="c:\Users\Antonio Cantos\Desktop\PROYECTO FOC\IMAGENES\formacionyempleo.png.jpg" alt="Logo Ayuntamiento de Carmona" />
-          </div>
+            <img src="./../../assets/sources/formacion y empleo.png" alt="Logo formación y empleo">          </div>
         </div>
         <div class="footer-section">
           <div class="footer-right">

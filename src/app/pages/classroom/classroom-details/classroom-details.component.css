@@ -1,107 +1,79 @@
-/* Reset de estilos */
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .paragraph-container {
+        padding: 10px;
+    }
+    .contenido-espacio .imagen-caracteristicas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    .imagen-caracteristicas .imagen-espacio {
+max-width: 80%;
+margin: 0;
+    }
+    
 }
 
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
+
+
+.containerClassroom {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Cabecera */
-.header {
+.contenido-espacio {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
+    flex-direction: column;
+    text-align: center;
 }
 
-.logo {
+.titulo-espacio {
     font-size: 24px;
+    margin-top: 10px;
 }
 
-.menu ul {
-    list-style: none;
+.imagen-caracteristicas {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.menu li {
+.imagen-espacio {
+    max-width: 600px; 
+    height: auto;
     margin-right: 20px;
 }
 
-.menu a {
-    color: white;
-    text-decoration: none;
+.caracteristicas {
+    text-align: left;
+    flex: 1; 
 }
 
-/* Contenido principal */
-.main-content {
-    padding: 20px;
-}
-
-.info-section {
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.info-text {
-    flex: 1;
-    padding: 0 20px;
-}
-
-.info-image img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Pie de página */
-.footer {
+.descripcion-espacio {
+    margin-top: 10px;
     text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
 }
 
-/* Estilos responsivos */
-@media screen and (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.calendar {
+    text-align: center;
+}
 
-    .logo {
-        margin-bottom: 10px;
-    }
-
-    .menu {
-        margin-top: 10px;
-    }
-
-    .menu ul {
-        flex-direction: column;
-    }
-
-    .menu li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .info-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    .info-text {
-        margin-bottom: 20px;
-    }
-
-    .info-image {
-        order: -1; /* Cambia el orden de la imagen para que aparezca primero en dispositivos móviles */
-    }
+.precio {
+    text-align: center;
+    font-size: 20px;
+    color: aqua;
 }

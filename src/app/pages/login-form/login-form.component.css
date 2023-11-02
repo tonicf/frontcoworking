@@ -1,4 +1,27 @@
-/* Estilos para el formulario de inicio de sesión */
+/* Reset de estilos y ajustes generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Estilos para el encabezado */
+header {
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+}
+
 .login-container {
   background-color: white;
   margin: 20px auto;
@@ -25,12 +48,13 @@
   color: black;
 }
 
-.form-group input[type="email"],
+.form-group input[type="text"],
 .form-group input[type="password"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin: 0; 
 }
 
 .form-group small {
@@ -52,11 +76,21 @@
   background-color: #585656;
 }
 
-/* Estilos para los mensajes de error */
-
-
-
 .form-group .is-invalid + div span {
-  color: #dc3545; /* Cambiar el color del texto a rojo en caso de error */
-  font-size: 12px; /* Mantener el tamaño de fuente igual que el resto */
+  color: #dc3545;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 10px 0;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .login-container {
+    padding: 10px;
+  }
 }

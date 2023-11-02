@@ -1,1 +1,153 @@
-<p>user-profile works!</p>
+<h2>Bienvenid@ {{ name.value }} {{ surname.value }}</h2>
+
+<div class="register-container">
+  <h3>Datos Personales</h3>
+    <form class="custom-form" method="post">
+      <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input
+          type="text"
+          [formControl]="name"
+          name="name"
+          placeholder="Introduzca su nombre de pila"
+          required
+          maxlength="10"
+          [ngClass]="{'is-valid': !name.invalid, 'is-invalid': name.invalid}"
+        />
+        <div [hidden]="name.valid || name.pristine">
+          <span *ngIf="name.errors?.['maxlength']">
+            Introduzca un nombre de pila con 10 caracteres máximo
+          </span>
+          <span *ngIf="name.errors?.['required']">
+            Introduzca un nombre de pila válido por favor
+          </span>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="surname">Apellido:</label>
+        <input
+          type="text"
+          [formControl]="surname"
+          name="surname"
+          placeholder="Introduzca su apellido"
+          required
+          maxlength="10"
+          [ngClass]="{'is-valid': !surname.invalid, 'is-invalid': surname.invalid}"
+        />
+        <div [hidden]="surname.valid || surname.pristine">
+          <span *ngIf="surname.errors?.['maxlength']">
+            Introduzca un apellido con 10 caracteres máximo
+          </span>
+          <span *ngIf="surname.errors?.['required']">
+            Introduzca un apellido válido por favor
+          </span>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="dni">DNI:</label>
+        <input
+        readonly
+          type="text"
+          [formControl]="dni"
+          name="dni"
+          placeholder="Ejemplo: 12345678A"
+          required
+          pattern="[0-9]{8}[A-Za-z]{1}"
+          maxlength="9"
+          [ngClass]="{'is-valid': !dni.invalid, 'is-invalid': dni.invalid}"
+        />
+        <small>Formato: 8 dígitos seguidos de 1 letra</small>
+        <div [hidden]="dni.valid || dni.pristine">
+          <span *ngIf="dni.errors?.['required']">
+            Introduzca un DNI válido por favor
+          </span>
+          <span *ngIf="dni.errors?.['pattern']">
+            Introduzca un DNI con el formato correcto
+          </span>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Correo electrónico:</label>
+        <input
+          type="email"
+          [formControl]="email"
+          name="email"
+          placeholder="juan@gmail.com"
+          required
+          [ngClass]="{'is-valid': !email.invalid, 'is-invalid': email.invalid}"
+        />
+        <div [hidden]="email.valid || email.pristine">
+          <span *ngIf="email.errors?.['required']">
+            Introduzca un correo electrónico válido por favor
+          </span>
+          <span *ngIf="email.errors?.['email']">
+            Introduzca un correo electrónico con el formato correcto
+          </span>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="numberPhone">Teléfono Móvil:</label>
+        <input
+          type="text"
+          [formControl]="numberPhone"
+          name="numberPhone"
+          placeholder="Ejemplo: 612345678"
+          required
+          pattern="[0-9]{9}"
+          [ngClass]="{'is-valid': !numberPhone.invalid, 'is-invalid': numberPhone.invalid}"
+        />
+        <small>Formato: 9 dígitos sin espacios ni guiones</small>
+        <div [hidden]="numberPhone.valid || numberPhone.pristine">
+          <span *ngIf="numberPhone.errors?.['required']">
+            Introduzca un número de teléfono válido por favor
+          </span>
+          <span *ngIf="numberPhone.errors?.['pattern']">
+            Introduzca un número de teléfono con el formato correcto
+          </span>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input
+          type="password"
+          [formControl]="password"
+          name="password"
+          placeholder="Password"
+          required
+          minlength="8"
+          [ngClass]="{'is-valid': !password.invalid, 'is-invalid': password.invalid}"
+        />
+        <div [hidden]="password.valid || password.pristine">
+          <span *ngIf="password.errors?.['required']">
+            Introduzca una contraseña válida por favor
+          </span>
+          <span *ngIf="password.errors?.['minlength']">
+            Introduzca una contraseña con el formato correcto
+          </span>
+        </div>
+        <small>Mínimo 8 caracteres</small>
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" [hidden]="name.invalid || surname.invalid || dni.invalid || email.invalid || numberPhone.invalid || password.invalid"(click)="setUserData()" >Actualizar Datos</button>
+      </div>
+    </form>
+    <div class="error-message" *ngIf="message">{{ message }}</div>
+  
+  </div>
+  
+  <div class="register-container">
+    <h3>Mis reservas</h3>
+    <ul>
+      <!-- Aquí puedes usar *ngFor para iterar sobre las reservas del usuario y mostrarlas en una lista 
+      <li *ngFor="let reserva of reservas">{{ reserva.fecha }} - {{ reserva.sala }}</li>-->
+    </ul>
+  </div>
+
+  
+    
